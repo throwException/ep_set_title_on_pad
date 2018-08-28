@@ -52,6 +52,7 @@ exports.handleMessage = function(hook_name, context, callback){
   if(message.action === 'sendTitleMessage'){
     authorManager.getAuthorName(message.myAuthorId, function(er, authorName){ // Get the authorname
 
+      console.warn('title update: ' + message.message);
       var msg = {
         type: "COLLABROOM",
         data: { 
